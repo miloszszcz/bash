@@ -2,17 +2,35 @@
 
 using namespace std;
 
+
+Header
+*****************************************************************************************************************
 class figuraGeometryczna
 {
 protected:
     double pole;
 public:
-    figuraGeometryczna() {}
-    figuraGeometryczna(double pole): pole(pole) { }
+    figuraGeometryczna(double Pole= 0);
 
     virtual double Pole() {return pole; };
 };
 
+*****************************************************************************************************************
+
+
+
+Plik.cpp
+*****************************************************************************************************************
+figuraGeometryczna:: figuraGeometryczna(double Pole) : pole(Pole)
+{
+    //pole = Pole;
+}
+*****************************************************************************************************************
+
+
+
+Header
+*****************************************************************************************************************
 class kwadrat: public figuraGeometryczna
 {
 private:
@@ -46,7 +64,7 @@ public:
         this->bokA = bokA;
     }
 };
-
+*****************************************************************************************************************
 int main(int agrc, char **argv)
 {
     for (int argNo=0; argNo<argc; argNo++)
